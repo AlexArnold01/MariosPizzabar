@@ -3,6 +3,7 @@ package MariosPizza;
 public class MariosPizzaBarTest {
     // SETUP
     // - 1. Test klasse skal kunne vise et display interface
+    //(Konsol UI)-1.Vis Menu -2. Opret ordre -3. Vis kø -4. Marker status -5.marker hentet/ikke hentet -6.Afslut/start forfra
     // Opret ordre
     // tjek id og status
     // - 2. Beregning
