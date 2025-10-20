@@ -19,4 +19,37 @@ public class MariosPizzaBarTest {
     //kalde relevante metoder til ændring og sletning af ordrer
     // - 6. start program forfra
 
+    public class pizzabar {
+        public static void main(String[] args) {
+            // TODO: metode til at kalde enums
+
+            // TODO: Vis console og lad bruger vælge funktion
+
+
+
+            // TODO: start program forfra
+
+            Object filehandler;
+            filehandler.writetofile();
+        }
+    }
+
+}
+
+
+import java.time.LocalDateTime;
+
+public class OrderServiceTest {
+
+    public testCreateOrder() {
+        OrderItem item = makeItem("Margherita", 75, 2);
+
+
+        public void testTotal () {
+            OrderItem i1 = makeItem("Margherita", 75, 2);
+            OrderItem i2 = makeItem("Pepperoni", 90, 1);
+
+
+        }
+    }
 }
