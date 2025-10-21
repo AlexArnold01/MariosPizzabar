@@ -1,20 +1,37 @@
 package MariosPizza;
 
-    // Enum navn
-    //Skal have en constructor
-
-    public Pizza(String name) {
-        // TODO: Sæt navn
+    public Pizza {
+        public String name;
+        public int size;
+        public double price;
     }
-    public String ToString;
 
-    // TODO: ToString method
+    //Constructor
 
-    // TODO: Implementér getter for name
+    public Pizza(String name, int size, double price){
+        this.name = name;
+        this.size = size;
+        this.price = price;
+    }
 
-// TODO: While loop og if statement
+    // Getters
+    public String getName(){
+        return name;
+    }
 
-// TODO: Getters og setters
+    public int getSize(){
+        return size;
+    }
 
-    // TODO: Implementér toString() for at vise pizzaens navn
+    public double getPrice() {
+        return price;
+    }
+
+    //toString metode
+    @Override
+    public String toString(){
+        return "Pizza: " + name + " (" + size + " cm) - " + price + " kr";
+    }
+
+
 
