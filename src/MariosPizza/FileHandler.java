@@ -1,17 +1,31 @@
 package MariosPizza;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileHandler {
 
 
+
+
+
+
+    private String csvToPizza(String line) {
+        String[] tokens = line.split(",");
+
+    }
+
+    private String pizzaToCSV(Pizza pizza) {
+        return pizza.getSize() + "," + pizza.getPrice() + "," + ;
+    }
+
     public void writeToFile(List<Pizza> orders){
         //TODO - write to said file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("orders.csv"))) {
              for(Pizza p : orders) {
-                writer.write(p.toString());
+                writer.write(pizzaToCSV(p));
                 writer.newLine();
             }
             } catch (IOException e) {
@@ -25,7 +39,7 @@ public class FileHandler {
         try (BufferedReader reader = new BufferedReader(new FileReader("orders.csv"))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                orders.add(Pizza.fromFileString(line));
+                orders.add(csvToPizza(line));
             }
             } catch (IOException e) {
             System.out.println(e.getMessage());
