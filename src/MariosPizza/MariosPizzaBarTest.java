@@ -111,13 +111,6 @@ public class MariosPizzaBarTest {
         System.out.println(id);
     }
 
-    public static void main(String[] args) {
-        queue.add(new Order(1, "Lukas", "Margherita"));
-        queue.add(new Order(2, "Maria", "Pepperoni"));
-
-        startedMarked(2);
-    }
-}
 
 
 
