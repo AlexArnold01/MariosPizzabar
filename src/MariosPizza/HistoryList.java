@@ -4,19 +4,28 @@ import java.util.ArrayList;
 
 public class HistoryList {
         public ArrayList<Pizza> RemovedPizzas = new ArrayList<>();
-        //TODO adds pizza which has been removed
-        public void addPizza(Pizza pizza){
-            Pizzas.add(pizza);
+        public void addRemovedPizza(Pizza pizza){
+            //adds Pizza to arrayList
+            RemovedPizzas.add(pizza);
         }
     }
+    //arrayList index
     public void RemovedPizzaList() {
-        //TODO pizza print out
-        //TODO i = size of pizzaList scales with pizza added.
+        System.out.println("Pizzas:");
+        for(int i=0; i < RemovedPizza.size(); i++) {
+            System.out.println(i + 1 + ": " + RemovedPizzas.get(i).toString());
     }
 
-    public void WipePizzas() {
-        //TODO boolean for validering
-        //TODO while() loop med try catch,
-        //TODO clear()
+    //whip HistoryList
+    public void WipePizzas(int index) {
+            try {
+                Pizza pizza = Pizzas.get(index);
+
+                pizza.clear();
+                System.out.println("Order history wiped");
+
+            } catch (IndexOutOfBoundsException e) {
+                System.out.printl("Error: Pizza in index" + index);
+            }
     }
 }

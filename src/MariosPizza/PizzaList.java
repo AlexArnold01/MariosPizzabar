@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class PizzaList {
     public ArrayList<Pizza> Pizzas = new ArrayList<>();
 
-    //adds Pizzas to the index
+    //adds Pizzas to the arrayList
     public void addPizza(Pizza pizza){
         Pizzas.add(pizza);
     }
 
-    //array list size
+    //arrayList Index
     public void PizzaList() {
         System.out.println("Pizzas:");
         for(int i=0; i < Pizzas.size(); i++) {
