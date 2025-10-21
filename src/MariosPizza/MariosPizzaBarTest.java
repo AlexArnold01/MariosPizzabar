@@ -126,7 +126,7 @@ public class MariosPizzaBarTest {
                 return;
             }
         }
-        System.out.println("⚠️ Ingen ordre fundet med ID: " + id);
+        System.out.println(id);
     }
 
     public static void main(String[] args) {
