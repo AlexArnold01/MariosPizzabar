@@ -10,7 +10,7 @@ public class PizzabarTest {
         String kunde;
         String pizza;
         int antal;
-        String status = "NY"; // NY -> STARTET -> KLAR -> AFHENTET
+        String status = "NY";
 
         //Konstruktør(tager parametre og gemmer data i objektet
         Order(String kunde, String pizza, int antal) {
@@ -43,8 +43,8 @@ public class PizzabarTest {
             else if (valg.equals("3")) ();
             else if (valg.equals("4")) pizzaStart();
             else if (valg.equals("5")) pizzaAfhentet();
-            else if (valg.equals("0")) { System.out.println("Farvel!"); break; }
-            else System.out.println("Error, try again.\n");
+            else if (valg.equals("0")) { System.out.println("Farvel!"); }
+            else System.out.println("Error, try again.");
         }
 
         sc.close();
@@ -62,9 +62,9 @@ public class PizzabarTest {
         System.out.print("Antal: ");
         int antal;
         try {
-            antal ;
+            antal = (sc.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Ugyldigt antal. Ordre ikke oprettet.");
+            System.out.println("Ordre ikke oprettet.");
             return;
         }
         if (antal <= 0) {
