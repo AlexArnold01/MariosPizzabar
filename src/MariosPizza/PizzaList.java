@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class PizzaList {
     public ArrayList<Pizza> Pizzas = new ArrayList<>();
 
-    //adds Pizzas to the index
+    //adds Pizzas to the arrayList
     public void addPizza(Pizza pizza){
         Pizzas.add(pizza);
     }
 
-    //array list size
+    //arrayList Index
     public void PizzaList() {
         System.out.println("Pizzas:");
         for(int i=0; i < Pizzas.size(); i++) {
@@ -19,13 +19,11 @@ public class PizzaList {
     }
     //removes Pizza from list
     public void RemovedPizzas(int index) {
-        boolean valid = false;
-        while(!valid) {
             try {
                 Pizza pizza = Pizzas.get(index);
                 String name = pizza.GetName();
 
-                valid = true;
+
                 Pizzas.remove(index);
                 System.out.println("Pizza removed: " + name);
 
