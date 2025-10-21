@@ -3,8 +3,11 @@ package MariosPizza;
 import java.util.ArrayList;
 
 public class HistoryList {
-        public ArrayList<RemovedPizzas> RemovedPizzas = new ArrayList<>();
+        public ArrayList<Pizza> RemovedPizzas = new ArrayList<>();
         //TODO adds pizza which has been removed
+        public void addPizza(Pizza pizza){
+            Pizzas.add(pizza);
+        }
     }
     public void RemovedPizzaList() {
         //TODO pizza print out

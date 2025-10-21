@@ -19,13 +19,11 @@ public class PizzaList {
     }
     //removes Pizza from list
     public void RemovedPizzas(int index) {
-        boolean valid = false;
-        while(!valid) {
             try {
                 Pizza pizza = Pizzas.get(index);
                 String name = pizza.GetName();
 
-                valid = true;
+
                 Pizzas.remove(index);
                 System.out.println("Pizza removed: " + name);
 
