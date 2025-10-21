@@ -1,5 +1,8 @@
 package MariosPizza;
 
+import java.util.Scanner;
+import java.time.LocalDateTime;
+
 public class MariosPizzaBarTest {
     // SETUP
     // - 1. Test klasse skal kunne vise et display interface
@@ -13,7 +16,7 @@ public class MariosPizzaBarTest {
     //Hent sorteret liste
     //Tjek liste er korrekt
     // - 4. Skift status
-    //kald meteoder
+    //kald metoder
     //tjek status
     //ændring af ordrer status
     // - 5. færdiggøring af ordrer
@@ -22,13 +25,33 @@ public class MariosPizzaBarTest {
 
     public class pizzabar {
         public static void main(String[] args) {
-            // TODO: metode til at kalde enums
-
-            // TODO: Vis console og lad bruger vælge funktion
-
-
-
-            // TODO: start program forfra
+            Scanner sc = new Scanner(System.in);
+            System.out.println("=== Manuel test-konsol (skriv som en bruger) ===");
+            while (true) {
+                System.out.println("""
+                1) Opret ordre (TEST)
+                2) Opret ordre 
+                3) Vis kø
+                4) Markér (startet)
+                5) Markér afhentning_klar
+                6) Fuldfør ordre
+                7) test
+                9) Afslut
+            """);
+                System.out.print("Valg: ");
+                switch (sc.nextLine()) {
+                    case "1" -> ();
+                    case "2" -> ();
+                    case "3" -> ();
+                    case "4" -> ();
+                    case "5" -> ();
+                    case "6" -> ();
+                    case "7" -> ();
+                    case "9" -> { System.out.println("Farvel!"); return; }
+                    default -> System.out.println("Ugyldigt valg.");
+                }
+            }
+        }
 
             Object filehandler;
             filehandler.writetofile();
@@ -38,9 +61,7 @@ public class MariosPizzaBarTest {
 }
 
 
-import java.time.LocalDateTime;
-
-public class OrderServiceTest {
+public OrderTest {
 
     public testCreateOrder() {
         OrderItem item = makeItem("Margherita", 75, 2);
