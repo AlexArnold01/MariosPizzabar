@@ -11,11 +11,11 @@ public class FileHandler {
     private String csvToPizza(String line) {
         String[] tokens = line.split(",");
         String ;
-        int size = 0;
+//        int size = 0;
         double price = 0.0;
         try {
             name = tokens[0];
-            size = Integer.parseInt(tokens[1]);
+//            size = Integer.parseInt(tokens[1]);
             price = Double.parseDouble(tokens[2]);
         } catch (NumberFormatException e) {
             return null;
