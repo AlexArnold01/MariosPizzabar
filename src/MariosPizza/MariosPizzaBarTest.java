@@ -26,7 +26,7 @@ public class MariosPizzaBarTest {
     public class pizzabar {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            System.out.println("=== Manuel test-konsol (skriv som en bruger) ===");
+            System.out.println("=== Manuel test-konsol ===");
             while (true) {
                 System.out.println("""
                 1) Opret ordre (TEST)
