@@ -1,177 +1,122 @@
 package MariosPizza;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.time.LocalDateTime;
 
-public class MariosPizzaBarTest {
-    
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("=== Konsol ===");
-            while (true) {
-                System.out.println("""
-                1) Opret ordre (TEST)
-                2) Opret ordre 
-                3) Vis kø
-                4) Markér (startet)
-                5) Markér afhentning_klar
-                6) Fuldfør ordre
-                7) Vis menu
-                9) Afslut
-            """);
-                System.out.print("Valg: ");
-                switch (sc.nextLine()) {
-                    case "1" -> ();
-                    case "2" -> ();
-                    case "3" -> ();
-                    case "4" -> ();
-                    case "5" -> ();
-                    case "6" -> ();
-                    case "7" -> ();
-                    case "9" -> { System.out.println("Farvel!"); return; }
-                    default -> System.out.println("Ugyldigt valg.");
-                }
-            }
+//Static class som opretter pizzatest objekt
+public class PizzabarTest {
+
+    static class Order {
+        String kunde;
+        String pizza;
+        int antal;
+        String status = "NY"; // NY -> STARTET -> KLAR -> AFHENTET
+
+        //Konstruktør(tager parametre og gemmer data i objektet
+        Order(String kunde, String pizza, int antal) {
+            this.kunde = kunde;
+            this.pizza = pizza;
+            this.antal = antal;
         }
+    }
 
-            Object filehandler;
-            filehandler.writeToFile();
-        }
-    
+    //Kø
+    static ArrayList<Order> ko = new ArrayList<>();
 
-
-
-    public static void opretOrdre() {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        while (true) {
+            System.out.println("""
+        1) Opret ordre
+        2) Vis Kø
+        3) Vis Menu
+        4) Start Pizza
+        5) Afhentet/fuldført
+        0) Afslut
+                    """);
+            System.out.print("Valg: ");
+            String valg = sc.nextLine().trim();
+
+            if (valg.equals("1"))opretOrdre();
+            else if (valg.equals("2")) visKo();
+            else if (valg.equals("3")) ();
+            else if (valg.equals("4")) pizzaStart();
+            else if (valg.equals("5")) pizzaAfhentet();
+            else if (valg.equals("0")) { System.out.println("Farvel!"); break; }
+            else System.out.println("Error, try again.\n");
+        }
+
+        sc.close();
+    }
+
+
+    //Metoden spørger om kundenavn, pizza og opretter order
+    static void opretOrdre(Scanner sc) {
+        System.out.print("Kunde: ");
+        String kunde = sc.nextLine();
+
+        System.out.print("Pizza: ");
+        String pizza = sc.nextLine();
+
+        System.out.print("Antal: ");
+        int antal;
+        try {
+            antal ;
+        } catch (NumberFormatException e) {
+            System.out.println("Ugyldigt antal. Ordre ikke oprettet.");
+            return;
+        }
+        if (antal <= 0) {
+            System.out.println("Antal skal være > 0. Ordre ikke oprettet.");
+            return;
+        }
+
+        ko.add(new Order(kunde, pizza, antal));
+        System.out.println(" Ordre oprettet ");
+    }
+
+    static void visKo() {
+        System.out.println("KÆ:");
+        if (ko.()) {
+            System.out.println("(ingen ordrer)");
+            return;
+        }
+        for (int i = 0; i < ko.size(); i++) {
+            Order o = ko.get(i);
+            System.out.printf(i + 1, o.kunde, o.pizza);
+        }
+        System.out.println();
+    }
+
+    static void pizzaStart(Scanner sc) {
         System.out.print("Kundenavn: ");
         String navn = sc.nextLine();
 
-        System.out.print("Pizza navn: ");
-        String pizza = sc.nextLine();
-
-        System.out.print("Pris pr. pizza: ");
-        double pris = sc.nextDouble();
-
-        System.out.print("Antal: ");
-        int antal = sc.nextInt();
-
-        double total = pris * antal;
-
-        System.out.println("Ordre oprettet!");
-        System.out.println("Kunde: " + navn);
-        System.out.println("Pizza: " + pizza + " x" + antal);
-        System.out.println("Total: " + total + " kr");
-    }
-    
-
-
-
-
-    public static Order {
-        int id;
-        String kunde;
-        String pizza;
-        String status;
-
-        Order(int id, String kunde, String pizza) {
-            this.id = id;
-            this.kunde = kunde;
-            this.pizza = pizza;
-            this.status = "NY";
-        }
-    }
-
-
-    public void Order {
-        int id;
-        String kunde;
-        String pizza;
-        String status;
-
-        Order(int id, String kunde, String pizza) {
-            this.id = id;
-            this.kunde = kunde;
-            this.pizza = pizza;
-            this.status = "NY";
-        }
-    }
-
-
-    static ArrayList<Order> queue = new ArrayList<>();
-
-    public static void markeSomStartet(int id) {
-        for (Order o : queue) {
-            if (o.id == id) {
-                o.status = "STARTET";
-                System.out.println(" Ordre #" + id + " er nu startet!");
+        for (Order o : ko) {
+            if (o.kunde.equalsIgnoreCase(navn)) {
+                o.status = "";
+                System.out.println("Ordre til " + navn + " er startet");
                 return;
             }
         }
-        System.out.println(id);
+        System.out.println("Ingen ordre fundet for " + navn + "");
     }
 
 
+    static void pizzaAfhentet(Scanner sc) {
+        System.out.print("Kundenavn: ");
+        String navn = sc.nextLine();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public OrderTest {
-
-    public testCreateOrder() {
-        OrderItem item = makeItem("Margherita", 75, 2);
-
-
-        public void testTotal () {
-            OrderItem i1 = makeItem("Margherita", 75, 2);
-            OrderItem i2 = makeItem("Pepperoni", 90, 1);
-
-
+        for (int i = 0; i < ko.size(); i++) {
+            Order o = ko.get(i);
+            if (o.kunde.equalsIgnoreCase(navn)) {
+                o.status = "AFHENTET";
+                ko.remove(i);
+                System.out.println(" Ordre til " + navn + " er AFHENTET");
+                return;
+            }
         }
+        System.out.println("Ingen ordre fundet for " + navn + "");
     }
 }
-
-
-
