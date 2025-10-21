@@ -4,24 +4,6 @@ import java.util.Scanner;
 import java.time.LocalDateTime;
 
 public class MariosPizzaBarTest {
-    // SETUP
-    // - 1. Test klasse skal kunne vise et display interface
-    //(Konsol UI)-1.Vis Menu -2. Opret ordre -3. Vis kø -4. Marker status -5.marker hentet/ikke hentet -6.Afslut/start forfra
-    // Opret ordre
-    // tjek id og status
-    // - 2. Beregning
-    // beregn og tjek pris er korrekt
-    // - 3. Sorter pizza kø
-    //tjek efter pizzaer med samme afhentningstid
-    //Hent sorteret liste
-    //Tjek liste er korrekt
-    // - 4. Skift status
-    //kald metoder
-    //tjek status
-    //ændring af ordrer status
-    // - 5. færdiggøring af ordrer
-    //kalde relevante metoder til ændring og sletning af ordrer
-    // - 6. start program forfra
     
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
@@ -86,7 +68,7 @@ public class MariosPizzaBarTest {
 
 
 
-    static class Order {
+    public static Order {
         int id;
         String kunde;
         String pizza;
@@ -101,7 +83,7 @@ public class MariosPizzaBarTest {
     }
 
 
-    static class Order {
+    public void Order {
         int id;
         String kunde;
         String pizza;
