@@ -54,7 +54,7 @@ public class MariosPizzaBarTest {
         }
 
             Object filehandler;
-            filehandler.writetofile();
+            filehandler.writeToFile();
         }
     }
 
