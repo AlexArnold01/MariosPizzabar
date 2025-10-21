@@ -122,7 +122,7 @@ public class MariosPizzaBarTest {
         for (Order o : queue) {
             if (o.id == id) {
                 o.status = "STARTET";
-                System.out.println("✅ Ordre #" + id + " er nu startet!");
+                System.out.println(" Ordre #" + id + " er nu startet!");
                 return;
             }
         }
