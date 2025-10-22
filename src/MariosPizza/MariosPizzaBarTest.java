@@ -1,5 +1,6 @@
 package MariosPizza;
 
+import java.lang.classfile.constantpool.IntegerEntry;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -38,14 +39,27 @@ public class PizzabarTest {
             System.out.print("Valg: ");
             String valg = sc.nextLine().trim();
 
-            if (valg.equals("1"))opretOrdre();
+            if (valg.equals("1"))opretOrdre(sc);
             else if (valg.equals("2")) visKo();
-            else if (valg.equals("3")) ();
-            else if (valg.equals("4")) pizzaStart();
-            else if (valg.equals("5")) pizzaAfhentet();
+            else if (valg.equals("3")) visMenu();
+            else if (valg.equals("4")) pizzaStart(sc);
+            else if (valg.equals("5")) pizzaAfhentet(sc);
             else if (valg.equals("0")) { System.out.println("Farvel!"); }
             else System.out.println("Error, try again.");
         }
+
+        /*switch(v){
+            case "1": opretOrdre(sc);
+            case "2": visKo();
+            case "3": visMenu();
+            case "4": pizzaStart();
+            case "5": pizzaAfhentet(sc);
+            case "6": ();
+            case "7": System.out.println("Farvel");
+            default: System.out.println("Error, Try again!");
+        }
+
+         */
 
         sc.close();
     }
@@ -62,7 +76,7 @@ public class PizzabarTest {
         System.out.print("Antal: ");
         int antal;
         try {
-            antal = (sc.nextLine());
+            antal = Integer.parseInt(sc.nextLine());
         } catch (NumberFormatException e) {
             System.out.println("Ordre ikke oprettet.");
             return;
@@ -78,15 +92,35 @@ public class PizzabarTest {
 
     static void visKo() {
         System.out.println("KÆ:");
-        if (ko.()) {
+        if (ko.isEmpty()) {
             System.out.println("(ingen ordrer)");
             return;
         }
         for (int i = 0; i < ko.size(); i++) {
             Order o = ko.get(i);
-            System.out.printf(i + 1, o.kunde, o.pizza);
+            System.out.printf(i + 1, o.kunde, o.pizza, o.antal, o.status);
         }
         System.out.println();
+    }
+
+    static void visMenu(){
+        System.out.println("""
+                MENUKORT
+                1. Vesuvio,
+                2. Amerikaner,
+                3. Cacciatore,
+                4. Carbona,
+                5. Dennis,
+                6. Bertil,
+                7. Silvia,
+                8. Victoria,
+                9. Toronfo,
+                10. Capricciosa,
+                11. Hawaii,
+                12. Blissola,
+                13. Venezia,
+                14. Mafia
+                """);
     }
 
     static void pizzaStart(Scanner sc) {
