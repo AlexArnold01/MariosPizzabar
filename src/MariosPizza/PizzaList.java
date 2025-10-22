@@ -30,6 +30,6 @@ public class PizzaList {
             } catch (IndexOutOfBoundsException e) {
                 System.out.printl("Error: Pizza in index" + index);
             }
-        }
+
     }
 }
