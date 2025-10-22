@@ -11,8 +11,8 @@ public class PizzaList {
     }
 
     //arrayList Index
-    public void PizzaList() {
-        System.out.println("Pizzas:");
+    public void pizzaListIndex() {
+        System.out.println("Active orders:");
         for(int i=0; i < Pizzas.size(); i++) {
             System.out.println(i + 1 + ": " + Pizzas.get(i).toString());
         }
