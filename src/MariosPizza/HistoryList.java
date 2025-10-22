@@ -21,11 +21,11 @@ public class HistoryList {
             try {
                 Pizza pizza = RemovedPizzas.get(index);
 
-                pizza.clear();
+                RemovedPizzas.clear();
                 System.out.println("Order history wiped");
 
             } catch (IndexOutOfBoundsException e) {
-                System.out.printl("Error: Pizza in index" + index);
+                System.out.println("Error: Pizza in index" + index);
             }
     }
 }
