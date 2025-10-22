@@ -3,7 +3,7 @@ package MariosPizza;
 import java.util.ArrayList;
 
 public class PizzaList {
-    public ArrayList<Pizza> Pizzas = new ArrayList<>();
+    private ArrayList<Pizza> Pizzas = new ArrayList<>();
 
     //adds Pizzas to the arrayList
     public void addPizza(Pizza pizza){
@@ -21,11 +21,11 @@ public class PizzaList {
     public void RemovedPizzas(int index) {
             try {
                 Pizza pizza = Pizzas.get(index);
-                String name = pizza.getName();
+                PizzaMenu items = pizza.getItems();
 
 
                 Pizzas.remove(index);
-                System.out.println("Pizza removed: " + name);
+                System.out.println("Pizza removed: " + items);
 
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Error: Pizza in index" + index);

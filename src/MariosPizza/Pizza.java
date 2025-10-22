@@ -3,21 +3,21 @@ package MariosPizza;
 import java.time.*;
 
     public class Pizza {
-        private String name;
+        private PizzaMenu items;
         private double price;
-        private LocalDateTime addTime;
+        private LocalDateTime time;
 
         //Constructor
 
-        public Pizza(double price, String name, LocalDateTime addTime) {
-            this.name = name;
+        public Pizza(PizzaMenu items, double price) {
+            this.items = items;
             this.price = price;
-            this.addTime = addTime;
+            this.time = LocalDateTime.now();
         }
 
         // Setters & getters
-        public String getName() {
-            return name;
+        public PizzaMenu getItems() {
+            return items;
         }
 
         public double getPrice() {
@@ -25,11 +25,11 @@ import java.time.*;
         }
 
         public LocalDateTime getAddTime(){
-            return addTime;
+            return time;
         }
 
-        public void setName(String name){
-            this.name = name;
+        public void setItems(PizzaMenu items){
+            this.items = items;
         }
 
         public void setPrice(double price){
@@ -37,13 +37,13 @@ import java.time.*;
         }
 
         public void setAddTime(LocalDateTime addTime){
-            this.addTime = addTime;
+            this.time = time;
         }
 
         //toString metode
         @Override
         public String toString() {
-            return "Pizza: " + name + " (" + " cm) - " + price + " kr";
+            return "Pizza: " + items + " (" + " cm) - " + price + " kr";
         }
     }
 
