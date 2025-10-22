@@ -21,15 +21,15 @@ public class PizzaList {
     public void RemovedPizzas(int index) {
             try {
                 Pizza pizza = Pizzas.get(index);
-                String name = pizza.GetName();
+                String name = pizza.getName();
 
 
                 Pizzas.remove(index);
                 System.out.println("Pizza removed: " + name);
 
             } catch (IndexOutOfBoundsException e) {
-                System.out.printl("Error: Pizza in index" + index);
+                System.out.println("Error: Pizza in index" + index);
             }
-        }
+
     }
 }
