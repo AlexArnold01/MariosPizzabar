@@ -45,6 +45,10 @@ import java.time.*;
         public String toString() {
             return "["+time+"]" + "Pizza: " + items + "-" + price + "kr";
         }
+
+        public String toCSV() {
+            return time + "," + items + "," + price;
+        }
     }
 
 

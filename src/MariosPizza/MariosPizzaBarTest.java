@@ -25,6 +25,7 @@ public class MariosPizzaBarTest {
 
     public static void userInput() {
         Scanner sc = new Scanner(System.in);
+        FileHandler fileHandler = new FileHandler();
 
         PizzaList pizzaList = new PizzaList();
         HistoryList historyList = new HistoryList();
@@ -51,17 +52,19 @@ public class MariosPizzaBarTest {
                         PizzaMenu choice = PizzaMenu.valueOf(input);
                         pizzaList.addPizza(new Pizza(choice, 0));
                         System.out.println("\uD83D\uDCE4pizza er sendt til list\uD83D\uDCE4");
-
+                        fileHandler.writeToActive(new Pizza(choice, 01), "ActiveOrders.csv");
+                        fileHandler.writeToActive(new Pizza(choice, 01), "OrderHistory.csv");
                         //adds the pizza to HistoryList.
                         PizzaMenu choiceB = PizzaMenu.valueOf(input);
                         historyList.addRemovedPizza(new Pizza(choiceB, 0));
 
                         printConsolMenu();
-                        break;
+
                     } catch (IllegalArgumentException e) {
                         System.out.println("Ugyldigt Input");
-                        break;
                     }
+                    break;
+
                 case 2: //removes pizzas from the PizzaList.
                     System.out.println("skrive index number på pizza der skal fjernes");
                     try {
@@ -73,7 +76,8 @@ public class MariosPizzaBarTest {
                         break;
                     }
                 case 3: //prints arraylist and check if it's empty or not.
-                    pizzaList.pizzaListIndex();
+//                    pizzaList.pizzaListIndex();
+                    fileHandler.readFromActive();
                     printConsolMenu();
                     break;
                 case 4://prints out the menu.

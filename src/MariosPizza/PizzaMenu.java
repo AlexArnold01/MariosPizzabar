@@ -11,7 +11,7 @@ public enum PizzaMenu {
     VICTORIA,
     TORONFO,
     CAPRICCIOSA,
-    HAWAI,
+    HAWAII,
     LEBLISSOLA,
     VENEZIA,
     MAFIA,
