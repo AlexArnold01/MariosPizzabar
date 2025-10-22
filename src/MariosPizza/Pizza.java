@@ -1,13 +1,13 @@
 package MariosPizza;
 
     public class Pizza {
-        public String name;
-        public double price;
+        private String name;
+        private double price;
 
 
         //Constructor
 
-        public Pizza(String name, int size, double price) {
+        public Pizza(double price, String name) {
             this.name = name;
             this.price = price;
         }

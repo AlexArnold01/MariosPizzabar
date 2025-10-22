@@ -10,21 +10,21 @@ public class FileHandler {
 
     private String csvToPizza(String line) {
         String[] tokens = line.split(",");
-        String ;
-//        int size = 0;
+        String name = "";
         double price = 0.0;
         try {
-            name = tokens[0];
-//            size = Integer.parseInt(tokens[1]);
-            price = Double.parseDouble(tokens[2]);
+            name = tokens[0].trim();
+            price = Double.parseDouble(tokens[1].trim());
+
+            PizzaMenu pizzaMenu = PizzaMenu.valueOf(name);
         } catch (NumberFormatException e) {
             return null;
         }
-        return new Pizza(size, price);
+        return new Pizza(price, name);
     }
 
     private String pizzaToCSV(Pizza pizza) {
-        return pizza.getName().valueOf() + ", " + pizza.getSize() + ", " + pizza.getPrice();
+        return PizzaMenu.valueOf(pizza.getName()) + ", " + pizza.getPrice();
     }
 
     public void writeToFile(List<Pizza> orders) {
@@ -33,6 +33,7 @@ public class FileHandler {
             for (Pizza p : orders) {
                 writer.write(pizzaToCSV(p));
                 writer.newLine();
+                writer.close();
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -51,6 +52,7 @@ public class FileHandler {
                 } else {
                     System.out.println("fejl");
                 }
+                reader.close();
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
