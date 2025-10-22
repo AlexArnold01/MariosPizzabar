@@ -9,7 +9,10 @@ public class PizzaList {
     public void addPizza(Pizza pizza){
         Pizzas.add(pizza);
     }
-
+    //check if ArrayList is empty
+    public boolean isEmpty(){
+        return Pizzas.isEmpty();
+    }
     //arrayList Index
     public void pizzaListIndex() {
         System.out.println("Active orders:");
@@ -18,7 +21,7 @@ public class PizzaList {
         }
     }
     //removes Pizza from list
-    public void RemovedPizzas(int index) {
+    public void removePizzas(int index) {
             try {
                 Pizza pizza = Pizzas.get(index);
                 PizzaMenu items = pizza.getItems();

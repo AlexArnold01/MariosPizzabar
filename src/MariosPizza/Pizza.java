@@ -5,14 +5,14 @@ import java.time.*;
     public class Pizza {
         private PizzaMenu items;
         private double price;
-        private LocalDateTime time;
+        private LocalTime time;
 
         //Constructor
 
         public Pizza(PizzaMenu items, double price) {
             this.items = items;
             this.price = price;
-            this.time = LocalDateTime.now();
+            this.time = LocalTime.now().withNano(0).withSecond(0);
         }
 
         // Setters & getters
@@ -24,7 +24,7 @@ import java.time.*;
             return price;
         }
 
-        public LocalDateTime getAddTime(){
+        public LocalTime getAddTime(){
             return time;
         }
 
@@ -36,14 +36,14 @@ import java.time.*;
             this.price = price;
         }
 
-        public void setAddTime(LocalDateTime addTime){
+        public void setAddTime(LocalTime addTime){
             this.time = time;
         }
 
         //toString metode
         @Override
         public String toString() {
-            return "Pizza: " + items + " (" + " cm) - " + price + " kr";
+            return "["+time+"]" + "Pizza: " + items + "-" + price + "kr";
         }
     }
 

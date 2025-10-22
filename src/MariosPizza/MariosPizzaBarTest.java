@@ -9,17 +9,21 @@ import java.util.Scanner;
 //Static class som opretter pizzatest objekt
 public class MariosPizzaBarTest {
     public static void main(String[] args) {
-        printMenu();
+        printConsolMenu();
         userInput();
     }
-    public static void printMenu() {
-        System.out.println("Menu:\n1:Add a pizza\n2:Remove a pizza\n3:Show Current orders\n4:Show Menu\n5:Wipe Transaction history");
+    //Prints the ConsolMenu
+    public static void printConsolMenu() {
+        System.out.println("Menu:\n1)Add a pizza\n2)Remove a pizza\n3)Show Current orders\n4)Show Menu\n5)Wipe Transaction history");
     }
+    //Prints the Menu
+
 
     public static void userInput() {
         Scanner sc = new Scanner(System.in);
 
         PizzaList pizzaList = new PizzaList();
+        HistoryList historyList = new HistoryList();
         boolean running = true;
 
         while (running == true) {
@@ -34,32 +38,42 @@ public class MariosPizzaBarTest {
             switch (userInput) {
 
                 case 1:
-                    System.out.println("Vælge pizza:" + "\nVesuvio");
+                    System.out.println("skrive en pizza ind");
                     String input = sc.nextLine().trim().toUpperCase();
                     try {
+                        //adds the pizza to PizzaList
                         PizzaMenu choice = PizzaMenu.valueOf(input);
                         pizzaList.addPizza(new Pizza(choice, 0));
                         System.out.println("\uD83D\uDCE4pizza er sendt til list\uD83D\uDCE4");
-                        printMenu();
+
+                        //adds the pizza to HistoryList
+                        PizzaMenu choiceB = PizzaMenu.valueOf(input);
+                        historyList.addRemovedPizza(new Pizza(choiceB, 0));
+
+                        printConsolMenu();
                         break;
                     } catch (IllegalArgumentException e) {
                         System.out.println("Ugyldigt Input");
                         break;
                     }
                 case 2:
-
+                    System.out.println("skrive index number på pizza der skal fjernes");
                     try {
-
-
-                        printMenu();
+                        pizzaList.removePizzas(sc.nextInt()-1);
+                        printConsolMenu();
+                        break;
                     }catch (IllegalArgumentException e) {
-
+                        System.out.println("Ugyldigt Input");
+                        break;
                     }
-                case 3:
-                   //todo add if statment for null
+                case 3: //prints arraylist and check if it's empty or not
                     pizzaList.pizzaListIndex();
-                    printMenu();
-
+                    printConsolMenu();
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    historyList.WipePizzas();
             }
         }
     }
