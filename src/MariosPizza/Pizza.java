@@ -17,10 +17,6 @@ package MariosPizza;
             return name;
         }
 
-        public int getSize() {
-            return size;
-        }
-
         public double getPrice() {
             return price;
         }
@@ -28,7 +24,7 @@ package MariosPizza;
         //toString metode
         @Override
         public String toString() {
-            return "Pizza: " + name + " (" + size + " cm) - " + price + " kr";
+            return "Pizza: " + name + " (" + " cm) - " + price + " kr";
         }
     }
 
