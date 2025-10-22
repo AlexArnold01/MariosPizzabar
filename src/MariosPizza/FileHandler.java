@@ -17,14 +17,15 @@ public class FileHandler {
             price = Double.parseDouble(tokens[1].trim());
 
             PizzaMenu pizzaMenu = PizzaMenu.valueOf(name);
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | IllegalArgumentException e) {
             return null;
         }
-        return new Pizza(price, name);
+        return new Pizza(price);
     }
 
     private String pizzaToCSV(Pizza pizza) {
-        return PizzaMenu.valueOf(pizza.getName()) + ", " + pizza.getPrice();
+        PizzaMenu menuItem = PizzaMenu.valueOf(pizza.getName());
+        return menuItem + ", " + pizza.getPrice();
     }
 
     public void writeToFile(List<Pizza> orders) {
