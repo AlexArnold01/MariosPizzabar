@@ -16,7 +16,7 @@ public class HistoryList {
         }
     }
 
-    //whip HistoryList
+    //wipes HistoryList
     public void WipePizzas() {
             try {
                 RemovedPizzas.clear();
