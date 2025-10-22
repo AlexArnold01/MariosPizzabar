@@ -9,9 +9,10 @@ import java.time.*;
 
         //Constructor
 
-        public Pizza(double price, String name) {
+        public Pizza(double price, String name, LocalDateTime addTime) {
             this.name = name;
             this.price = price;
+            this.addTime = addTime;
         }
 
         // Setters & getters
