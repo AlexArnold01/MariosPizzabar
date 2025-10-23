@@ -52,7 +52,6 @@ public class MariosPizzaBarTest {
                         PizzaMenu choice = PizzaMenu.valueOf(input);
                         pizzaList.addPizza(new Pizza(choice, 0));
                         System.out.println("\uD83D\uDCE4pizza er sendt til list\uD83D\uDCE4");
-                        fileHandler.writeToActive(new Pizza(choice, 01), "ActiveOrders.csv");
                         fileHandler.writeToActive(new Pizza(choice, 01), "OrderHistory.csv");
                         //adds the pizza to HistoryList.
                         PizzaMenu choiceB = PizzaMenu.valueOf(input);
@@ -76,8 +75,7 @@ public class MariosPizzaBarTest {
                         break;
                     }
                 case 3: //prints arraylist and check if it's empty or not.
-//                    pizzaList.pizzaListIndex();
-                    fileHandler.readFromActive();
+                    pizzaList.pizzaListIndex();
                     printConsolMenu();
                     break;
                 case 4://prints out the menu.

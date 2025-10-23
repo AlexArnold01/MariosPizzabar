@@ -43,11 +43,7 @@ import java.time.*;
         //toString metode
         @Override
         public String toString() {
-            return "["+time+"]" + "Pizza: " + items + "-" + price + "kr";
-        }
-
-        public String toCSV() {
-            return time + "," + items + "," + price;
+            return "["+time+"]" + "Pizza: " + items;
         }
     }
 
