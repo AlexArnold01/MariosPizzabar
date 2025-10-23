@@ -15,4 +15,4 @@ public enum PizzaMenu {
     LEBLISSOLA,
     VENEZIA,
     MAFIA,
-    }
+}
