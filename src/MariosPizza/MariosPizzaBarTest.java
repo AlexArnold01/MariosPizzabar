@@ -93,6 +93,7 @@ public class MariosPizzaBarTest {
                     break;
                 case 5:
                     System.out.println("Closing program...");
+                    sc.close();
                     running = false;
                     break;
                 default:
