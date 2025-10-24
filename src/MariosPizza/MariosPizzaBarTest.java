@@ -11,7 +11,7 @@ public class MariosPizzaBarTest {
 
     //Prints the ConsolMenu.
     public static void printConsolMenu() {
-        System.out.println("\nPlease choose an option:\n1)Add a pizza\n2)Remove a pizza\n3)Show Current orders\n4)Show Menu");
+        System.out.println("\nPlease choose an option:\n1)Add an order\n2)Remove an order\n3)Show Current orders\n4)Show Menu\n5)Shutdown");
     }
 
     //Prints the Menu.
@@ -61,27 +61,43 @@ public class MariosPizzaBarTest {
                         printConsolMenu();
 
                     } catch (IllegalArgumentException e) {
-                        System.out.println("Invalid output");
+                        System.out.println("⚠️Invalid input⚠️");
+                        System.out.println("Returning to menu...");
+                        printConsolMenu();
 
                     }
                     break;
-
                 case 2: //removes pizzas from the PizzaList.
-                    System.out.println("skrive index number på pizza der skal fjernes");
                     try {
+                        System.out.println("Write the index of the order you want to remove");
+                        pizzaList.pizzaListIndex();
                         pizzaList.removePizzas(sc.nextInt() - 1);
                         printConsolMenu();
-                        break;
-                    } catch (IllegalArgumentException e) {
-                        System.out.println("Ugyldigt Input");
-                        break;
+                    } catch (NumberFormatException e) {
+                        System.out.println("⚠️Invalid input⚠️" + e.getMessage());
+                        System.out.println("Returning to menu...");
+                        printConsolMenu();
                     }
+                    break;
                 case 3: //prints arraylist and check if it's empty or not.
-                    pizzaList.pizzaListIndex();
-                    printConsolMenu();
+                    if (pizzaList.isEmpty()) {
+                        System.out.println("List is empty");
+                        printConsolMenu();
+                    } else {
+                        pizzaList.pizzaListIndex();
+                        printConsolMenu();
+                    }
                     break;
                 case 4://prints out the menu.
                     printMenu();
+                    break;
+                case 5:
+                    System.out.println("Closing program...");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("⚠️Invalid input⚠️");
+                    printConsolMenu();
                     break;
             }
         }

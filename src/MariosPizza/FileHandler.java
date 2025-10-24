@@ -4,6 +4,7 @@ import java.io.*;
 
 public class FileHandler {
 
+    //Method that writes added orders to a .csv file
     public void writeToActive(Pizza order, String fileName) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName,true));

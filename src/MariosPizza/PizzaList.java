@@ -34,8 +34,9 @@ public class PizzaList {
             System.out.println("Pizza removed: " + items);
 
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Error: Pizza in index" + index);
+            System.out.println("Error: Pizza in index" + index + "\nReturning to menu");
         }
 
     }
+
 }
